@@ -59,7 +59,9 @@ public final class EtcdKeysResponse implements EtcdHeaderAwareResponse {
       @JsonProperty("node") EtcdNode node,
       @JsonProperty("prevNode") EtcdNode prevNode) {
 
-    this.action = EtcdKeyAction.valueOf(action);
+   	if(action != null) { 
+		this.action = EtcdKeyAction.valueOf(action);
+	}
     this.node = node;
     this.prevNode = prevNode;
 
